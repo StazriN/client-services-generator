@@ -56,6 +56,7 @@ export class ArgumentParser {
             })
             .help('h')
             .alias('h', 'help')
+            .scriptName('client-services-generator')
             .usage('Usage: $0 [options]')
             .example('$0 -s ./apiDocs/openApi.json -t axios -o ./myApp', 'Generate axios service files from openApi.json documentation file.')
             .check(({ i, s }) => {

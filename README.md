@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/client-services-generator.svg)](https://badge.fury.io/js/client-services-generator)
+
 # Client services generator
 
 Axios and Angular REST API client generator from OpenAPI v3 (YAML or JSON) and WADL\*.
