@@ -1,0 +1,26 @@
+    public static async {{method.name}}({{{getMethodParams method}}}): Promise<{{{getResponseType method.response}}}> {
+        {{#checkForQuery method}}
+        const parameters: Array<string> = [{{{requiredParameters}}}];
+        let requestQuery: string = '';
+        
+        {{#generateParametersCheck method}}
+        if ({{parameter}} !== undefined) {
+            parameters.push(`{{parameter}}=${ {{parameter}} }`);
+        }
+
+        {{/generateParametersCheck}}
+        if (parameters.length > 0) {
+            requestQuery = `?${parameters.join('&')}`;
+        }
+
+        {{/checkForQuery}}
+        return new Promise<{{{getResponseType method.response}}}>((resolve, reject) => {
+            ServiceBase.{{method.type}}<{{{getResponseType method.response}}}>(`{{generateRequestPath path method}}{{#checkForQuery method}}${requestQuery}{{/checkForQuery}}`{{#if method.requestBody}}, requestData{{/if}})
+                .then((response) => {
+                    resolve(response.data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }

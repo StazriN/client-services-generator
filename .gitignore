@@ -1,0 +1,7 @@
+# Ignoring libraries and binaries
+node_modules
+/lib
+
+# VS Code
+.vscode/
+client-services-generator.code-workspace
