@@ -1,6 +1,6 @@
 {
     "name": "client-services-generator",
-    "version": "0.9.2",
+    "version": "0.9.4",
     "description": "Axios and Angular REST API client generator from OpenAPI v3 (YAML or JSON) or WADL.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -10,7 +10,20 @@
         "build": "tsc",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
     },
-    "keywords": [],
+    "keywords": [
+        "axios",
+        "angular",
+        "angular8",
+        "angular9",
+        "TypeScript",
+        "generator",
+        "HTTP",
+        "HTTP Client",
+        "api",
+        "REST",
+        "openapi",
+        "wadl"
+    ],
     "author": "Samuel Obuch",
     "license": "GPL-3.0",
     "repository": {
@@ -33,7 +46,7 @@
         "eslint-plugin-prettier": "^3.1.2"
     },
     "dependencies": {
-        "api-spec-converter": "^2.11.0",
+        "@itentialopensource/api-spec-converter": "^2.7.32",
         "fs-extra": "^8.1.0",
         "handlebars": "^4.7.6",
         "inquirer": "^7.1.0",

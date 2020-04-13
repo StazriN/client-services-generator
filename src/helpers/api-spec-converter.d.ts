@@ -1,2 +1,2 @@
-// TypeScript required declaration for external library
-declare module 'api-spec-converter';
+// TypeScript required declaration for external library without TS support
+declare module '@itentialopensource/api-spec-converter';

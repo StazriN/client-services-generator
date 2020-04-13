@@ -1,7 +1,7 @@
 import { FileSystemHelpers } from '../helpers/fileSystemHelpers';
 import { Models } from '../models';
 import * as YAML from 'js-yaml';
-import * as wadl2openapi from 'api-spec-converter';
+import * as wadl2openapi from '@itentialopensource/api-spec-converter';
 
 export enum BasicExtensions {
     json,
