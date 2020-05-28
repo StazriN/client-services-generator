@@ -1,5 +1,6 @@
 import { FileSystemHelpers } from '../helpers/fileSystemHelpers';
 import { Models } from '../models';
+import * as promptly from 'promptly';
 
 /*
  * Class for creating a directory structure and generating output files
@@ -7,26 +8,43 @@ import { Models } from '../models';
 export class OutputFilesResolver {
     private static defaultPath: string = '';
 
-    public static async generateOutput(path: string, genResult: Models.GeneratedData) {
+    public static async generateOutput(path: string, genResult: Models.GeneratedData): Promise<boolean> {
         console.log('Generating output files.');
         this.setDefaultPath(path);
-        await this.createBaseDir();
+        const baseDirCreated = await this.createBaseDir();
+
+        if (!baseDirCreated) return false;
+
         FileSystemHelpers.createFile(`${this.defaultPath}serviceBase.ts`, genResult.serviceBase);
         await this.createModelsAndEnums(genResult.models, genResult.enums);
         await this.createRequests(genResult.requests);
+
+        return true;
     }
 
     private static setDefaultPath(path: string) {
         this.defaultPath = FileSystemHelpers.getFullPath(`${path}\\services`).concat('\\');
     }
 
-    private static async createBaseDir() {
+    private static async createBaseDir(): Promise<boolean> {
         // If the output directory already exists application delete it and creates new
         if (FileSystemHelpers.dirExists(this.defaultPath)) {
+            if (!(await this.ConfirmDelete())) return false;
             FileSystemHelpers.deleteDir(this.defaultPath);
         }
 
         FileSystemHelpers.createDir(this.defaultPath);
+        return true;
+    }
+
+    private static async ConfirmDelete(): Promise<boolean> {
+        console.log();
+        const answer = await promptly.confirm(
+            "The 'services' folder already exists. \nAre you sure you want to delete content of the 'services' folder and generate a new one? [yes/no]:",
+        );
+        console.log();
+
+        return answer;
     }
 
     /* Method for the creating models and enums defined in the API documentation */

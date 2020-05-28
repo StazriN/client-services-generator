@@ -1,5 +1,6 @@
 import { Models } from '../../models';
 import { GeneralGenerators } from '../general';
+import * as path from 'path';
 
 /*
  * Class for generating all parts of services (models, service base, requests)
@@ -33,8 +34,8 @@ export class AngularServiceGenerator {
 
     /* Paths to Angular specific templates */
     private static AngularTemplates: GeneralGenerators.IFrameworkTemplates = {
-        serviceBase: './src/templates/angular/serviceBase.hbs',
-        requestClass: './src/templates/angular/requestClass.hbs',
-        requestMethod: './src/templates/angular/requestMethod.hbs',
+        serviceBase: path.join(__dirname, '../../templates/angular/serviceBase.hbs'),
+        requestClass: path.join(__dirname, '../../templates/angular/requestClass.hbs'),
+        requestMethod: path.join(__dirname, '../../templates/angular/requestMethod.hbs'),
     };
 }

@@ -1,5 +1,6 @@
 import { Models } from '../../models';
 import { GeneralGenerators } from '../general';
+import * as path from 'path';
 
 /*
  * Class for generating all parts of services (models, service base, requests)
@@ -33,8 +34,8 @@ export class AxiosServiceGenerator {
 
     /* Paths to Axios specific templates */
     private static AxiosTemplates: GeneralGenerators.IFrameworkTemplates = {
-        serviceBase: './src/templates/axios/serviceBase.hbs',
-        requestMethod: './src/templates/axios/requestMethod.hbs',
-        requestClass: './src/templates/axios/requestClass.hbs',
+        serviceBase: path.join(__dirname, '../../templates/axios/serviceBase.hbs'),
+        requestMethod: path.join(__dirname, '../../templates/axios/requestMethod.hbs'),
+        requestClass: path.join(__dirname, '../../templates/axios/requestClass.hbs'),
     };
 }

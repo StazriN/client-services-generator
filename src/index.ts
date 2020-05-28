@@ -26,8 +26,13 @@ async function main() {
         }
 
         // Generating output directory structure and output files
-        await OutputFilesResolver.generateOutput(parsedArguments.output, genResult);
-        console.log(`Services was successfully generated to (${parsedArguments.output}\\services\\).`);
+        const filesGenerated = await OutputFilesResolver.generateOutput(parsedArguments.output, genResult);
+
+        if (filesGenerated) {
+            console.log(`Services was successfully generated to (${parsedArguments.output}\\services\\).`);
+        } else {
+            console.log(`Services wasn't generated.`);
+        }
     } catch (error) {
         console.error(error);
     }

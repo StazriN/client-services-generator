@@ -1,13 +1,14 @@
 {
     "name": "client-services-generator",
-    "version": "0.9.4",
+    "version": "0.9.5",
     "description": "Axios and Angular REST API client generator from OpenAPI v3 (YAML or JSON) or WADL.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
         "start": "node ./lib/index.js",
-        "build_start": "tsc && node ./lib/index.js",
-        "build": "tsc",
+        "compile": "tsc",
+        "templates": "shx cp -r ./src/templates/ ./lib/templates/",
+        "build": "npm run compile && npm run templates",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
     },
     "keywords": [
@@ -38,12 +39,14 @@
         "@types/inquirer": "^6.5.0",
         "@types/js-yaml": "^3.12.3",
         "@types/node": "^13.11.1",
+        "@types/promptly": "^3.0.0",
         "@types/yargs": "^15.0.4",
-        "prettier": "^1.19.1",
-        "typescript": "^3.8.3",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.1",
-        "eslint-plugin-prettier": "^3.1.2"
+        "eslint-plugin-prettier": "^3.1.2",
+        "prettier": "^1.19.1",
+        "shx": "^0.3.2",
+        "typescript": "^3.8.3"
     },
     "dependencies": {
         "@itentialopensource/api-spec-converter": "^2.7.32",
@@ -51,6 +54,7 @@
         "handlebars": "^4.7.6",
         "inquirer": "^7.1.0",
         "js-yaml": "^3.13.1",
+        "promptly": "^3.0.3",
         "xml-js": "^1.6.11",
         "yargs": "^15.3.1"
     },

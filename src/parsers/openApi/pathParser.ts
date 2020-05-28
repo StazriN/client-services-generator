@@ -182,13 +182,14 @@ export class PathParser {
 
         // Check if method contains correct response
         if (openApiResponses['200'] === undefined || !this.checkCorrectContentType(openApiResponses['200'])) {
-            if (openApiResponses.default === undefined || !this.checkCorrectContentType(openApiResponses.default)) {
-                return voidResponseType;
+            if (openApiResponses['201'] === undefined || !this.checkCorrectContentType(openApiResponses['201'])) {
+                if (openApiResponses.default === undefined || !this.checkCorrectContentType(openApiResponses.default)) {
+                    return voidResponseType;
+                }
+                return RequestBodyParser.parse(openApiResponses.default);
             }
-
-            return RequestBodyParser.parse(openApiResponses.default);
+            return RequestBodyParser.parse(openApiResponses['201']);
         }
-
         return RequestBodyParser.parse(openApiResponses['200']);
     }
 
