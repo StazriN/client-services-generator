@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import * as yargs from 'yargs';
 import * as inquirer from 'inquirer';
 import { FileSystemHelpers } from '../helpers/fileSystemHelpers';

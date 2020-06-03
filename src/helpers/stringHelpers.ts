@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 /*
  * Helper class for operations with strings
  */

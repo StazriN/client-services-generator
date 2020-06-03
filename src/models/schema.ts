@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { BasicTypes } from './models-namespace';
 
 interface ISchema {

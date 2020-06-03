@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { Method } from './models-namespace';
 
 interface IPath {

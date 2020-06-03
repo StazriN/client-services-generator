@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { Models } from '../../models';
 import * as Handlebars from 'handlebars';
 import { IGeneralTemplates } from './templates';

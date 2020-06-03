@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { Dictionary } from '../../helpers/dictionary';
 import { Models } from '../../models';
 import { TypeHelpers } from './helpers/typeHelpers';

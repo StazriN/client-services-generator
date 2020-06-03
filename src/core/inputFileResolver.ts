@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { FileSystemHelpers } from '../helpers/fileSystemHelpers';
 import { Models } from '../models';
 import * as YAML from 'js-yaml';

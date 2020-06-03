@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 interface IRequestObject {
     type: Array<string>;
     isRefModel?: boolean;

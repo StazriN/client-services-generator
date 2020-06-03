@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { Parameter, RequestObject } from './models-namespace';
 
 interface IMethod {

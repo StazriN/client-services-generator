@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { ModelParser } from './modelParser';
 import { PathParser } from './pathParser';
 import { Models } from '../../models';

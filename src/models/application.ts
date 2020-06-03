@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { ApiData, Model, RequestObject, Enum } from './models-namespace';
 import { Dictionary } from '../helpers/dictionary';
 

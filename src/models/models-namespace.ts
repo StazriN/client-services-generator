@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 /* That file collects all used models and exporting all of it to create one Models namespace */
 export * from './application';
 export * from './apiData';

@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import * as fs from 'fs-extra';
 import * as path from 'path';
 

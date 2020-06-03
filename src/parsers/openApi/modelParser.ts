@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { Models } from '../../models';
 import { EnumParser } from './enumParser';
 import { TypeHelpers } from './helpers/typeHelpers';

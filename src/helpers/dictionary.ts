@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 /**
  * Represents a collection of keys and values.
  * Key must be either string or number.

@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { GeneratedObject } from "./models-namespace";
 
 interface IGeneratedData {

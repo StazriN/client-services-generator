@@ -1,3 +1,8 @@
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 export enum BasicTypes {
     string = 'string',
     number = 'number',

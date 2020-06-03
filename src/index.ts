@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+
+/* 
+** @author  Samuel Obuch
+** @project client-services-generator
+*/
+
 import { ArgumentParser, InputFileResolver, IArguments, OutputFilesResolver } from './core';
 import { Models } from './models';
 import { OpenApiParser } from './parsers/openApi';
