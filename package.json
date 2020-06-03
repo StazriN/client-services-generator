@@ -7,8 +7,9 @@
     "scripts": {
         "start": "node ./lib/index.js",
         "compile": "tsc",
-        "templates": "shx cp -r ./src/templates/ ./lib/templates/",
-        "build": "npm run compile && npm run templates",
+        "templates": "shx cp -r ./src/templates/ ./lib/",
+        "clean": "shx rm -rf ./lib/",
+        "build": "npm run clean && npm run compile && npm run templates",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
     },
     "keywords": [

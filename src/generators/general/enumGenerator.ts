@@ -2,6 +2,7 @@ import { Models } from '../../models';
 import * as Handlebars from 'handlebars';
 import { IGeneralTemplates } from './templates';
 import { FileSystemHelpers } from '../../helpers/fileSystemHelpers';
+import { StringHelpers } from '../../helpers/stringHelpers';
 
 /*
  * Class for generating user-defined enums via Handlebars template library
@@ -14,7 +15,9 @@ export class EnumGenerator {
         this.registerGenerateEnumValuesHelper();
 
         enums.forEach((element: Models.Enum) => {
-            generatedEnums.push(new Models.GeneratedObject({ name: element.name, value: template({ enum: element }) }));
+            generatedEnums.push(
+                new Models.GeneratedObject({ name: StringHelpers.lowercaseFirstLetter(element.name), value: template({ enum: element }) }),
+            );
         });
 
         return generatedEnums;

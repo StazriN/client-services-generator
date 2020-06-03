@@ -1,19 +1,19 @@
     public {{method.name}}({{{getMethodParams method}}}): Observable<{{{getResponseType method.response}}}> {
         {{#checkForQuery method}}
-        const parameters: HttpParams = new HttpParams();
-
+        let parameters: HttpParams = new HttpParams();
         {{#generateRequiredParameters method}}
-        parameters.append('{{parameter}}', `${ {{parameter}} }`);
+
+        parameters = parameters.append('{{parameter}}', `${ {{parameter}} }`);
         {{/generateRequiredParameters}}
-        
         {{#generateParametersCheck method}}
+
         if ({{parameter}} !== undefined) {
-            parameters.append('{{parameter}}', `${ {{parameter}} }`);
+            parameters = parameters.append('{{parameter}}', `${ {{parameter}} }`);
         }
 
         {{/generateParametersCheck}}
         {{/checkForQuery}}
-        return this.service.http.{{method.type}}<{{{getResponseType method.response}}}>('{{generateRequestPath path method}}'{{#if method.requestBody}}, requestData{{/if}}, { headers: this.service.httpOptions.headers{{#checkForQuery method}}, params: parameters{{/checkForQuery}} }).pipe(
+        return this.service.http.{{method.type}}<{{{getResponseType method.response}}}>(`${this.service.baseUrl}{{generateRequestPath path method}}`{{#if method.requestBody}}, requestData{{/if}}, { headers: this.service.httpOptions.headers{{#checkForQuery method}}, params: parameters{{/checkForQuery}} }).pipe(
             catchError(this.service.formatErrors)
         );
     }

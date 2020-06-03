@@ -2,7 +2,7 @@
         {{#checkForQuery method}}
         const parameters: Array<string> = [{{{requiredParameters}}}];
         let requestQuery: string = '';
-        
+
         {{#generateParametersCheck method}}
         if ({{parameter}} !== undefined) {
             parameters.push(`{{parameter}}=${ {{parameter}} }`);

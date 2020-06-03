@@ -26,6 +26,7 @@ export class OutputFilesResolver {
         this.defaultPath = FileSystemHelpers.getFullPath(`${path}\\services`).concat('\\');
     }
 
+    /* Method for the creating 'service' folder for generated files */
     private static async createBaseDir(): Promise<boolean> {
         // If the output directory already exists application delete it and creates new
         if (FileSystemHelpers.dirExists(this.defaultPath)) {
@@ -37,10 +38,11 @@ export class OutputFilesResolver {
         return true;
     }
 
+    /* Method for the user confirmation of delete existing folder */
     private static async ConfirmDelete(): Promise<boolean> {
         console.log();
         const answer = await promptly.confirm(
-            "The 'services' folder already exists. \nAre you sure you want to delete content of the 'services' folder and generate a new one? [yes/no]:",
+            "The 'services' folder already exists. \nAre you sure you want to delete content of the 'services' folder and generate a new one? [Y/n]:",
         );
         console.log();
 

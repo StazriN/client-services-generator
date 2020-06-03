@@ -19,7 +19,7 @@ export class ModelGenerator {
         this.registerGenerateModelConstructorHelper(models);
 
         models.forEach((model) => {
-            generatedModels.push(new Models.GeneratedObject({ name: model.name, value: template({ model }) }));
+            generatedModels.push(new Models.GeneratedObject({ name: StringHelpers.lowercaseFirstLetter(model.name), value: template({ model }) }));
         });
 
         return generatedModels;

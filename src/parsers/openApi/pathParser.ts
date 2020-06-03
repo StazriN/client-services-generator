@@ -21,7 +21,7 @@ export class PathParser {
         return paths;
     }
 
-    /* Parsing all methods (GET, PUT, POST, DELETE) for specific path */
+    /* Parsing all methods (GET, POST, PUT, PATCH, DELETE) for specific path */
     private static parsePathMethods(openApiPath: any): Array<Models.Method> {
         const methods: Array<Models.Method> = [];
         const methodsNames: Array<string> = Object.keys(openApiPath);
@@ -74,6 +74,8 @@ export class PathParser {
                 return Models.MethodType.POST;
             case 'put':
                 return Models.MethodType.PUT;
+            case 'patch':
+                return Models.MethodType.PATCH;
             case 'delete':
                 return Models.MethodType.DELETE;
             default:
