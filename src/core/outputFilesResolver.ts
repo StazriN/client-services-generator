@@ -28,7 +28,7 @@ export class OutputFilesResolver {
     }
 
     private static setDefaultPath(path: string) {
-        this.defaultPath = FileSystemHelpers.getFullPath(`${path}\\services`).concat('\\');
+        this.defaultPath = FileSystemHelpers.getFullPath(`${path}/services`).concat('/');
     }
 
     /* Method for the creating 'service' folder for generated files */
@@ -56,7 +56,7 @@ export class OutputFilesResolver {
 
     /* Method for the creating models and enums defined in the API documentation */
     private static async createModelsAndEnums(models: Array<Models.GeneratedObject>, enums: Array<Models.GeneratedObject>) {
-        const modelsPath: string = `${this.defaultPath}models\\`;
+        const modelsPath: string = `${this.defaultPath}models/`;
 
         FileSystemHelpers.createDir(modelsPath);
 
@@ -71,7 +71,7 @@ export class OutputFilesResolver {
 
     /* Method for the creating all requests defined in the API documentation */
     private static async createRequests(requests: Array<Models.GeneratedObject>) {
-        const requestsPath: string = `${this.defaultPath}requests\\`;
+        const requestsPath: string = `${this.defaultPath}requests/`;
 
         FileSystemHelpers.createDir(requestsPath);
 

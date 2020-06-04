@@ -35,7 +35,7 @@ async function main() {
         const filesGenerated = await OutputFilesResolver.generateOutput(parsedArguments.output, genResult);
 
         if (filesGenerated) {
-            console.log(`Services was successfully generated to (${parsedArguments.output}\\services\\).`);
+            console.log(`Services was successfully generated to (${parsedArguments.output}/services/).`);
         } else {
             console.log(`Services wasn't generated.`);
         }
